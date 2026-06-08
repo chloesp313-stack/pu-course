@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>P1-P4 · Power Up 体系课 — 花笙青少英语</title>
+<meta name="description" content="花笙青少英语P1-P4 Power Up体系课，7-12岁，剑桥大学出版社Power Up 1-4，CLIL跨学科教学，无缝衔接YLE/KET/PET考试。">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#2563eb;
+  --blue-dark:#1d4ed8;
+  --blue-deep:#1e3a8a;
+  --blue-light:#dbeafe;
+  --blue-glow:#60a5fa;
+  --ink:#0f172a;
+  --slate:#475569;
+  --muted:#94a3b8;
+  --cream:#f8fafc;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  background:linear-gradient(165deg,#1e3a8a 0%,#1d4ed8 35%,#2563eb 60%,#3b82f6 100%);
+  color:#fff;padding:80px 24px 60px;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 30%,rgba(96,165,250,.15),transparent),
+    radial-gradient(ellipse 500px 500px at 80% 70%,rgba(219,234,254,.08),transparent);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;
+  background:linear-gradient(to top,#fff,transparent);pointer-events:none;
+}
+.hero-logo{
+  width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;margin-bottom:28px;
+}
+.hero-logo img{height:36px;width:auto}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,52px);
+  font-weight:900;letter-spacing:-1px;line-height:1.15;margin-bottom:12px;
+  position:relative;z-index:1;
+}
+.hero h1 .accent{
+  background:linear-gradient(135deg,var(--blue-glow),#93c5fd);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero .tagline{
+  font-size:clamp(15px,3.5vw,19px);opacity:.85;max-width:420px;
+  margin:0 auto 40px;line-height:1.7;position:relative;z-index:1;font-weight:500;
+}
+.hero-stats{
+  display:flex;gap:16px;position:relative;z-index:1;flex-wrap:wrap;justify-content:center;
+}
+.hero-stat{
+  background:rgba(255,255,255,.1);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;
+  padding:16px 18px;min-width:90px;text-align:center;
+}
+.hero-stat .num{font-size:26px;font-weight:800;color:var(--blue-glow)}
+.hero-stat .label{font-size:11px;opacity:.65;margin-top:2px;font-weight:600;letter-spacing:.3px}
+
+/* ── SECTION BASE ── */
+section{padding:72px 24px}
+.section-inner{max-width:640px;margin:0 auto}
+.sec-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:999px;margin-bottom:16px;
+  background:var(--blue-light);color:var(--blue-dark);
+}
+.sec-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.sec-title{
+  font-family:'Playfair Display',serif;font-size:clamp(26px,5.5vw,38px);
+  font-weight:900;letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;
+}
+.sec-desc{font-size:15px;color:var(--slate);line-height:1.8;margin-bottom:32px}
+
+/* ── TEXTBOOK SECTION ── */
+.textbook-section{background:var(--cream)}
+.textbook-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:24px;
+}
+.textbook-card{
+  background:#fff;border:1px solid #e2e8f0;border-radius:16px;
+  padding:16px;text-align:center;
+  transition:.25s;position:relative;overflow:hidden;
+}
+.textbook-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-glow));opacity:0;
+  transition:.25s;
+}
+.textbook-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.textbook-card:hover::before{opacity:1}
+.textbook-card img{
+  height:110px;width:auto;object-fit:contain;margin-bottom:10px;
+  border-radius:8px;
+}
+.textbook-card .tb-label{
+  font-size:13px;font-weight:700;color:var(--blue-dark);
+  letter-spacing:.3px;
+}
+.textbook-card .tb-sub{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* exam table */
+.exam-table{
+  width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;
+  background:#fff;border-radius:12px;overflow:hidden;
+  border:1px solid #e2e8f0;
+}
+.exam-table th{
+  background:var(--blue);color:#fff;padding:10px 12px;
+  font-weight:700;text-align:center;font-size:12px;
+}
+.exam-table td{
+  padding:10px 12px;text-align:center;border-bottom:1px solid #f1f5f9;
+  font-weight:600;color:var(--slate);
+}
+.exam-table tr:last-child td{border-bottom:none}
+.exam-table tr:nth-child(even){background:#f8fafc}
+.exam-table .level-col{color:var(--blue-dark);font-weight:800}
+.exam-table .exam-col{color:var(--blue);font-weight:700}
+
+.textbook-note{
+  background:#fff;border:1px solid #e2e8f0;border-radius:12px;
+  padding:16px 20px;font-size:13px;color:var(--slate);line-height:1.7;
+  position:relative;padding-left:48px;
+}
+.textbook-note::before{
+  content:'\1F4D6';position:absolute;left:16px;top:14px;font-size:18px;
+}
+
+/* ── TIMELINE / PROGRESSION ── */
+.progression-section{background:#fff}
+.progression-track{
+  position:relative;padding:20px 0;
+}
+.progression-line{
+  position:absolute;top:42px;left:20px;right:20px;height:4px;
+  background:linear-gradient(90deg,var(--blue-light),var(--blue),var(--blue-deep));
+  border-radius:4px;
+}
+.progression-nodes{
+  display:flex;justify-content:space-between;position:relative;
+}
+.progression-node{
+  display:flex;flex-direction:column;align-items:center;flex:1;position:relative;z-index:1;
+}
+.node-dot{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--blue);border:4px solid var(--blue-light);
+  margin-bottom:12px;transition:.3s;
+  box-shadow:0 0 0 4px rgba(37,99,235,.1);
+}
+.node-dot.active{
+  background:var(--blue-deep);border-color:#fff;
+  box-shadow:0 0 0 4px rgba(37,99,235,.25),0 0 16px rgba(37,99,235,.3);
+}
+.node-label{
+  font-size:12px;font-weight:800;color:var(--blue-dark);
+  margin-bottom:4px;text-align:center;
+}
+.node-sub{
+  font-size:10px;color:var(--muted);text-align:center;
+  max-width:80px;line-height:1.4;
+}
+
+.progression-cards{
+  display:flex;flex-direction:column;gap:14px;margin-top:32px;
+}
+.prog-card{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--cream);border:1px solid #e2e8f0;border-radius:14px;
+  padding:20px;transition:.2s;
+}
+.prog-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.04);transform:translateY(-1px)}
+.prog-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+}
+.prog-content h4{font-size:14px;font-weight:800;margin-bottom:4px;color:var(--blue-deep)}
+.prog-content p{font-size:12px;color:var(--slate);line-height:1.7}
+.prog-content .prog-tag{
+  display:inline-block;font-size:10px;font-weight:700;
+  padding:2px 8px;border-radius:4px;margin-bottom:6px;
+  background:var(--blue-light);color:var(--blue-dark);
+}
+
+/* ── FEATURES ── */
+.features-section{background:var(--cream)}
+.feature-list{display:flex;flex-direction:column;gap:16px}
+.feature-item{
+  display:flex;align-items:flex-start;gap:16px;
+  background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+  padding:20px;transition:.2s;
+}
+.feature-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.04);transform:translateY(-1px)}
+.feature-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:var(--blue-light);display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+}
+.feature-content h4{font-size:14px;font-weight:800;margin-bottom:4px}
+.feature-content p{font-size:12px;color:var(--slate);line-height:1.6}
+
+/* ── HUASHENG DIFFERENCE ── */
+.difference-section{background:#fff}
+.diff-comparison{
+  display:flex;flex-direction:column;gap:14px;margin-bottom:28px;
+}
+.diff-card{
+  border-radius:14px;padding:20px;position:relative;overflow:hidden;
+}
+.diff-card.diff-standard{
+  background:#f8fafc;border:1px solid #e2e8f0;
+}
+.diff-card.diff-huasheng{
+  background:linear-gradient(135deg,var(--blue-light),#eff6ff);
+  border:2px solid var(--blue);
+}
+.diff-card .diff-badge{
+  display:inline-block;font-size:10px;font-weight:800;
+  padding:3px 10px;border-radius:999px;margin-bottom:10px;
+  letter-spacing:.5px;
+}
+.diff-card.diff-standard .diff-badge{
+  background:#e2e8f0;color:var(--slate);
+}
+.diff-card.diff-huasheng .diff-badge{
+  background:var(--blue);color:#fff;
+}
+.diff-card h4{font-size:14px;font-weight:800;margin-bottom:6px}
+.diff-card p{font-size:12px;color:var(--slate);line-height:1.7}
+.diff-card ul{list-style:none;padding:0;margin:0}
+.diff-card ul li{
+  font-size:12px;color:var(--slate);line-height:1.8;
+  padding-left:18px;position:relative;
+}
+.diff-card ul li::before{
+  content:'';position:absolute;left:0;top:8px;
+  width:8px;height:8px;border-radius:50%;
+}
+.diff-card.diff-standard ul li::before{background:#cbd5e1}
+.diff-card.diff-huasheng ul li::before{background:var(--blue)}
+
+/* philosophy / quote box */
+.philosophy-box{
+  background:var(--cream);border:1px solid #e2e8f0;border-radius:16px;
+  padding:28px 24px;text-align:center;position:relative;overflow:hidden;
+}
+.philosophy-box::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:60px;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-glow));
+}
+.philosophy-box .ph-quote{
+  font-family:'Playfair Display',serif;font-size:18px;font-weight:700;
+  line-height:1.6;color:var(--blue-deep);margin-bottom:12px;
+}
+.philosophy-box .ph-sub{font-size:13px;color:var(--slate);line-height:1.7}
+
+/* ── STUDENT CASE ── */
+.case-section{background:var(--cream)}
+.case-card{
+  background:#fff;border:1px solid #e2e8f0;border-radius:16px;
+  overflow:hidden;
+}
+.case-header{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:#fff;padding:24px;text-align:center;
+}
+.case-header .case-name{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:900;
+  margin-bottom:4px;
+}
+.case-header .case-meta{font-size:13px;opacity:.8}
+.case-data{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e2e8f0;
+}
+.case-datum{
+  background:#fff;padding:20px 16px;text-align:center;
+}
+.case-datum .cd-num{font-size:24px;font-weight:900;color:var(--blue)}
+.case-datum .cd-label{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500}
+.case-quote{
+  padding:24px;position:relative;
+}
+.case-quote::before{
+  content:'\201C';position:absolute;left:20px;top:12px;
+  font-size:48px;color:var(--blue-light);font-family:'Playfair Display',serif;line-height:1;
+}
+.case-quote p{
+  font-size:13px;color:var(--slate);line-height:1.8;
+  padding-left:24px;font-style:italic;
+}
+.case-quote .quote-author{
+  font-size:12px;font-weight:700;color:var(--blue-dark);
+  margin-top:10px;padding-left:24px;font-style:normal;
+}
+
+/* ── EXPECTED OUTCOMES ── */
+.expected-section{
+  background:linear-gradient(165deg,#1e3a8a 0%,#1d4ed8 50%,#2563eb 100%);
+  color:#fff;
+}
+.expected-section .sec-tag{background:rgba(255,255,255,.12);color:var(--blue-glow)}
+.expected-section .sec-tag::before{background:var(--blue-glow)}
+.expected-section .sec-title{color:#fff}
+.expected-section .sec-desc{color:rgba(255,255,255,.75)}
+.expected-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.expected-card{
+  background:rgba(255,255,255,.08);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.1);border-radius:14px;
+  padding:20px 16px;text-align:center;transition:.2s;
+}
+.expected-card:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.expected-card .ec-num{font-size:22px;font-weight:900;color:var(--blue-glow)}
+.expected-card .ec-label{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px;font-weight:500}
+.expected-card .ec-desc{font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;line-height:1.4}
+
+/* ── PATHWAY SECTION ── */
+.pathway-section{background:#fff}
+.pathway-visual{
+  display:flex;flex-direction:column;align-items:center;gap:0;
+}
+.pathway-box{
+  width:100%;max-width:400px;border-radius:16px;padding:24px;text-align:center;
+  position:relative;
+}
+.pathway-box.pathway-pu{
+  background:linear-gradient(135deg,var(--blue-light),#eff6ff);
+  border:2px solid var(--blue);
+}
+.pathway-box.pathway-think{
+  background:linear-gradient(135deg,#fef3c7,#fffbeb);
+  border:2px solid #f59e0b;
+}
+.pathway-box .pw-label{
+  font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.pathway-pu .pw-label{color:var(--blue-dark)}
+.pathway-think .pw-label{color:#b45309}
+.pathway-box h4{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:900;
+  margin-bottom:6px;
+}
+.pathway-pu h4{color:var(--blue-deep)}
+.pathway-think h4{color:#92400e}
+.pathway-box p{font-size:13px;color:var(--slate);line-height:1.7}
+.pathway-box .pw-tags{
+  display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px;
+}
+.pathway-box .pw-tag{
+  font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;
+}
+.pathway-pu .pw-tag{background:var(--blue);color:#fff}
+.pathway-think .pw-tag{background:#f59e0b;color:#fff}
+.pathway-arrow{
+  display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;font-size:22px;color:var(--blue);
+  font-weight:900;
+}
+.pathway-note{
+  margin-top:20px;background:var(--cream);border:1px solid #e2e8f0;
+  border-radius:12px;padding:16px 20px;font-size:13px;color:var(--slate);
+  line-height:1.7;text-align:center;
+}
+
+/* ── CTA ── */
+.cta-section{
+  background:linear-gradient(165deg,#1e3a8a 0%,#1d4ed8 50%,#3b82f6 100%);
+  color:#fff;text-align:center;padding:80px 24px 60px;position:relative;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 400px 300px at 50% 30%,rgba(96,165,250,.1),transparent);
+  pointer-events:none;
+}
+.cta-section h2{
+  font-family:'Playfair Display',serif;font-size:clamp(26px,5.5vw,36px);
+  font-weight:900;margin-bottom:12px;position:relative;z-index:1;
+}
+.cta-section .cta-sub{font-size:15px;opacity:.8;margin-bottom:36px;position:relative;z-index:1}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:16px 40px;background:#fff;color:var(--blue-dark);
+  font-weight:800;font-size:16px;border-radius:999px;text-decoration:none;
+  transition:.25s;position:relative;z-index:1;
+  box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.cta-qr{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  margin-top:28px;position:relative;z-index:1;
+}
+.cta-qr img{
+  width:110px;height:110px;border-radius:14px;
+  border:3px solid rgba(255,255,255,.2);
+}
+.cta-qr span{font-size:12px;opacity:.6}
+.cta-address{
+  font-size:12px;opacity:.5;margin-top:20px;position:relative;z-index:1;
+  line-height:1.6;
+}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:28px 24px;
+  color:var(--muted);font-size:11px;background:#fff;
+  border-top:1px solid #f1f5f9;
+}
+
+/* ── ANIMATIONS ── */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+.fade-in-left{opacity:0;transform:translateX(-24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in-left.visible{opacity:1;transform:none}
+.fade-in-right{opacity:0;transform:translateX(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in-right.visible{opacity:1;transform:none}
+.scale-in{opacity:0;transform:scale(.92);transition:opacity .5s ease,transform .5s ease}
+.scale-in.visible{opacity:1;transform:none}
+
+/* stagger children */
+.stagger > *{opacity:0;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease}
+.stagger.visible > *:nth-child(1){opacity:1;transform:none;transition-delay:.05s}
+.stagger.visible > *:nth-child(2){opacity:1;transform:none;transition-delay:.12s}
+.stagger.visible > *:nth-child(3){opacity:1;transform:none;transition-delay:.19s}
+.stagger.visible > *:nth-child(4){opacity:1;transform:none;transition-delay:.26s}
+.stagger.visible > *:nth-child(5){opacity:1;transform:none;transition-delay:.33s}
+.stagger.visible > *:nth-child(6){opacity:1;transform:none;transition-delay:.40s}
+.stagger.visible > *:nth-child(7){opacity:1;transform:none;transition-delay:.47s}
+.stagger.visible > *:nth-child(8){opacity:1;transform:none;transition-delay:.54s}
+.stagger.visible > *:nth-child(9){opacity:1;transform:none;transition-delay:.61s}
+.stagger.visible > *:nth-child(10){opacity:1;transform:none;transition-delay:.68s}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-logo">
+    <img src="./logo-blue.png" alt="花笙青少英语">
+  </div>
+  <h1>P1-P4<br><span class="accent">Power Up 体系课</span></h1>
+  <p class="tagline">7-12岁 · 剑桥大学出版社 · Power Up 1-4<br>从小学到初中，一站式英语进阶体系</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">4</div><div class="label">级别进阶</div></div>
+    <div class="hero-stat"><div class="num">KET</div><div class="label">直达考试</div></div>
+    <div class="hero-stat"><div class="num">500+</div><div class="label">词汇目标</div></div>
+    <div class="hero-stat"><div class="num">CLIL</div><div class="label">跨学科学习</div></div>
+  </div>
+</section>
+
+<!-- ═══ 教材介绍 ═══ -->
+<section class="textbook-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">核心教材</div>
+    <h2 class="sec-title">Power Up 1-4</h2>
+    <p class="sec-desc">剑桥大学出版社 & Cambridge Assessment English（2019年出版），Kid's Box 的全面升级版。首个纳入"剑桥终身能力框架"的少儿英语课程体系，覆盖5个级别（Starter、1、2、3、4），每个级别对应一个学年。</p>
+    <div class="textbook-grid">
+      <div class="textbook-card">
+        <img src="./Power Up 1.jpg" alt="Power Up 1">
+        <div class="tb-label">PU 1</div>
+        <div class="tb-sub">衔接 YLE Movers</div>
+      </div>
+      <div class="textbook-card">
+        <img src="./Power Up 2.jpg" alt="Power Up 2">
+        <div class="tb-label">PU 2</div>
+        <div class="tb-sub">衔接 YLE Flyers</div>
+      </div>
+      <div class="textbook-card">
+        <img src="./Power Up 3.jpg" alt="Power Up 3">
+        <div class="tb-label">PU 3</div>
+        <div class="tb-sub">衔接 KET</div>
+      </div>
+      <div class="textbook-card">
+        <img src="./Power Up 4.jpg" alt="Power Up 4">
+        <div class="tb-label">PU 4</div>
+        <div class="tb-sub">衔接 PET</div>
+      </div>
+    </div>
+
+    <!-- Exam alignment table -->
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>级别</th>
+          <th>对标考试</th>
+          <th>核心能力</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="level-col">PU 1</td>
+          <td class="exam-col">YLE Movers</td>
+          <td>基础句型、日常词汇、听力理解</td>
+        </tr>
+        <tr>
+          <td class="level-col">PU 2</td>
+          <td class="exam-col">YLE Flyers</td>
+          <td>阅读耐力、简单写作、200+词汇</td>
+        </tr>
+        <tr>
+          <td class="level-col">PU 3</td>
+          <td class="exam-col">KET</td>
+          <td>复杂句型、段落写作、CLIL学术词汇</td>
+        </tr>
+        <tr>
+          <td class="level-col">PU 4</td>
+          <td class="exam-col">PET</td>
+          <td>作文写作、辩论准备、500+词汇</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="textbook-note">
+      Power Up 每一级包含 CLIL 跨学科内容（科学、艺术、数学、地理、历史）、"Learning for Life" 社交技能与批判性思维培养，以及 Story Fun 绘本阅读线——用故事驱动语法学习，告别枯燥操练。
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 学习进阶路径 ═══ -->
+<section class="progression-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">进阶路径</div>
+    <h2 class="sec-title">从 PU1 到更高阶段</h2>
+    <p class="sec-desc">四年级体系覆盖小学全阶段，每个级别一年稳步推进，能力螺旋上升。</p>
+
+    <!-- Visual timeline -->
+    <div class="progression-track">
+      <div class="progression-line"></div>
+      <div class="progression-nodes stagger">
+        <div class="progression-node">
+          <div class="node-dot active"></div>
+          <div class="node-label">PU 1</div>
+          <div class="node-sub">基础奠基</div>
+        </div>
+        <div class="progression-node">
+          <div class="node-dot active"></div>
+          <div class="node-label">PU 2</div>
+          <div class="node-sub">能力构建</div>
+        </div>
+        <div class="progression-node">
+          <div class="node-dot active"></div>
+          <div class="node-label">PU 3</div>
+          <div class="node-sub">突破进阶</div>
+        </div>
+        <div class="progression-node">
+          <div class="node-dot"></div>
+          <div class="node-label">PU 4</div>
+          <div class="node-sub">高阶提升</div>
+        </div>
+        <div class="progression-node">
+          <div class="node-dot"></div>
+          <div class="node-label">Think</div>
+          <div class="node-sub">冲刺 FCE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detailed cards -->
+    <div class="progression-cards stagger">
+      <div class="prog-card">
+        <div class="prog-icon">1</div>
+        <div class="prog-content">
+          <span class="prog-tag">PU 1 · 基础奠基</span>
+          <h4>打牢地基，建立英语自信</h4>
+          <p>基础句型操练、日常生活词汇积累、听力理解入门。通过故事和对话建立语感，为后续进阶打下坚实基础。对标 YLE Movers 考试水平。</p>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">2</div>
+        <div class="prog-content">
+          <span class="prog-tag">PU 2 · 能力构建</span>
+          <h4>阅读起飞，写作起步</h4>
+          <p>阅读耐力逐步增强，开始简单写作训练。每个级别积累 200+ 词汇，CLIL 跨学科内容让孩子用英语学科学。对标 YLE Flyers 考试水平。</p>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">3</div>
+        <div class="prog-content">
+          <span class="prog-tag">PU 3 · 突破进阶</span>
+          <h4>从句子到段落，质的飞跃</h4>
+          <p>复杂句型运用、段落写作训练、CLIL 学术词汇大量积累。直接对标 KET 考试，为小升初英语打下核心竞争力。</p>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-icon">4</div>
+        <div class="prog-content">
+          <span class="prog-tag">PU 4 · 高阶提升</span>
+          <h4>独立表达，冲击 PET</h4>
+          <p>作文写作、辩论准备、500+ 词汇量。从"能说"到"能写""能辩"，全面对标 PET 考试，为中学阶段的英语学习做好充分准备。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 课程特色 ═══ -->
+<section class="features-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">课程特色</div>
+    <h2 class="sec-title">Power Up 的五大亮点</h2>
+    <p class="sec-desc">不只是学英语，更是在英语中学习、思考和成长。</p>
+    <div class="feature-list stagger">
+      <div class="feature-item">
+        <div class="feature-icon">📈</div>
+        <div class="feature-content">
+          <h4>系统进阶，完整覆盖</h4>
+          <p>PU1-PU4 四个级别，从小学低年级到高年级无缝衔接。每个级别一年稳步推进，螺旋式上升，能力扎实增长。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔬</div>
+        <div class="feature-content">
+          <h4>CLIL 跨学科教学</h4>
+          <p>用英语学习科学、艺术、数学、地理、历史等学科内容。孩子不是在背单词，而是在用英语理解真实世界，学科词汇量大幅领先。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📚</div>
+        <div class="feature-content">
+          <h4>Story Fun 绘本阅读线</h4>
+          <p>通过故事驱动语法学习，让枯燥的语法规则变成有趣的故事体验。阅读不再是任务，而是孩子主动想做的事。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🤝</div>
+        <div class="feature-content">
+          <h4>对话合作与同伴学习</h4>
+          <p>"Learning for Life" 板块培养 21 世纪核心技能：社交能力、批判性思维、团队协作。英语不只是语言工具，更是思维方式。</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">✍️</div>
+        <div class="feature-content">
+          <h4>课后落实读写+口语输出</h4>
+          <p>强调读写准确度和整段口语输出，确保每节课的学习效果真正落地。不只"学了"，而是"能用"。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 花笙的教学特色 ═══ -->
+<section class="difference-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">花笙特色</div>
+    <h2 class="sec-title">花笙的 PU 课<br>为什么不一样？</h2>
+    <p class="sec-desc">很多机构只是教教材，花笙在标准课程之上叠加了阅读线和口语训练，让孩子真正"能用"英语。</p>
+
+    <div class="diff-comparison stagger">
+      <div class="diff-card diff-standard">
+        <span class="diff-badge">普通机构</span>
+        <h4>只教教材</h4>
+        <ul>
+          <li>按课本走流程，老师读学生听</li>
+          <li>缺乏阅读材料和课外延伸</li>
+          <li>口语练习少，孩子"学了但说不出"</li>
+          <li>课后缺乏系统性练习</li>
+        </ul>
+      </div>
+      <div class="diff-card diff-huasheng">
+        <span class="diff-badge">花笙教学</span>
+        <h4>教材 + 阅读线 + 口语输出</h4>
+        <ul>
+          <li>标准 PU 课程体系完整覆盖</li>
+          <li>叠加 Story Fun 绘本阅读线，驱动语法学习</li>
+          <li>每节课口语输出训练，确保"学了就能用"</li>
+          <li>课后读写准确度落实，效果可追踪</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="philosophy-box">
+      <div class="ph-quote">"不只是教教材，而是在标准 PU 课程上叠加 Story Fun 绘本阅读线和口语输出训练，让孩子不只'学了'，而是'能用'。"</div>
+      <div class="ph-sub">这就是花笙 Power Up 课的核心理念——让英语成为孩子的工具，而不只是考试科目。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 学生案例 ═══ -->
+<section class="case-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">真实案例</div>
+    <h2 class="sec-title">学员成长故事</h2>
+    <p class="sec-desc">看看花笙学员在 Power Up 课程中的真实进步。</p>
+
+    <div class="case-card scale-in">
+      <div class="case-header">
+        <div class="case-name">Leo</div>
+        <div class="case-meta">P3 在读 · PU1 入学 · 一年进阶到 PU2</div>
+      </div>
+      <div class="case-data">
+        <div class="case-datum">
+          <div class="cd-num">+32</div>
+          <div class="cd-label">KET 模拟提分</div>
+        </div>
+        <div class="case-datum">
+          <div class="cd-num">132</div>
+          <div class="cd-label">KET 模拟分数</div>
+        </div>
+        <div class="case-datum">
+          <div class="cd-num">280+</div>
+          <div class="cd-label">CLIL 学科词汇</div>
+        </div>
+        <div class="case-datum">
+          <div class="cd-num">1年</div>
+          <div class="cd-label">从 PU1 到 PU2</div>
+        </div>
+      </div>
+      <div class="case-quote">
+        <p>Leo从PU1开始学，Story Fun让他爱上了阅读，CLIL课让他用英语学科学。一年下来，KET模拟考从100分到132分，进步肉眼可见。</p>
+        <div class="quote-author">— Leo 家长</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 学习成果 ═══ -->
+<section class="expected-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">学习成果</div>
+    <h2 class="sec-title">每学一年</h2>
+    <p class="sec-desc">系统学习，持续积累，能力全面提升。</p>
+    <div class="expected-grid stagger">
+      <div class="expected-card">
+        <div class="ec-num">300-500+</div>
+        <div class="ec-label">每级别词汇量</div>
+        <div class="ec-desc">从基础词汇到学术词汇</div>
+      </div>
+      <div class="expected-card">
+        <div class="ec-num">280+</div>
+        <div class="ec-label">CLIL 学科词汇</div>
+        <div class="ec-desc">科学、数学、地理等</div>
+      </div>
+      <div class="expected-card">
+        <div class="ec-num">阅读</div>
+        <div class="ec-label">从图片到独立阅读</div>
+        <div class="ec-desc">图片理解 → 段落阅读</div>
+      </div>
+      <div class="expected-card">
+        <div class="ec-num">口语</div>
+        <div class="ec-label">从跟读到独立表达</div>
+        <div class="ec-desc">跟读模仿 → 自由输出</div>
+      </div>
+      <div class="expected-card" style="grid-column:1/-1">
+        <div class="ec-num">考试衔接</div>
+        <div class="ec-label">无缝衔接 YLE / KET / PET</div>
+        <div class="ec-desc">PU1→YLE Movers · PU2→YLE Flyers · PU3→KET · PU4→PET</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 衔接到更高阶段 ═══ -->
+<section class="pathway-section">
+  <div class="section-inner fade-in">
+    <div class="sec-tag">未来规划</div>
+    <h2 class="sec-title">完成 PU3 之后</h2>
+    <p class="sec-desc">Power Up 不是终点，而是更高阶段的起点。完成 PU3 即可衔接 Think 系列，冲刺 PET/FCE。</p>
+
+    <div class="pathway-visual scale-in">
+      <div class="pathway-box pathway-pu">
+        <div class="pw-label">当前阶段</div>
+        <h4>Power Up 1-4</h4>
+        <p>7-12岁小学阶段，建立扎实英语基础</p>
+        <div class="pw-tags">
+          <span class="pw-tag">PU1 YLE</span>
+          <span class="pw-tag">PU2 Flyers</span>
+          <span class="pw-tag">PU3 KET</span>
+          <span class="pw-tag">PU4 PET</span>
+        </div>
+      </div>
+      <div class="pathway-arrow">↓</div>
+      <div class="pathway-box pathway-think">
+        <div class="pw-label">进阶方向</div>
+        <h4>Think 系列</h4>
+        <p>12岁+中学阶段，冲刺 PET / FCE 高阶考试</p>
+        <div class="pw-tags">
+          <span class="pw-tag">PET 进阶</span>
+          <span class="pw-tag">FCE 冲刺</span>
+          <span class="pw-tag">学术英语</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pathway-note">
+      从 PU1 入学到 Think 系列高阶，花笙为孩子规划完整的学习路径。每个阶段无缝衔接，让英语能力持续增长，不走弯路。
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-section">
+  <h2>让孩子的英语<br>系统进阶</h2>
+  <p class="cta-sub">预约免费测评，了解孩子适合从哪个级别开始</p>
+  <a href="#cta-qr" class="cta-btn">立即预约试听</a>
+  <div class="cta-qr" id="cta-qr">
+    <img src="./花笙青少二维码.jpg" alt="扫码咨询">
+    <span>扫码咨询课程详情</span>
+  </div>
+  <p class="cta-address">📍 广州黄埔区万科城市之光A区正门商铺二楼<br>（地铁5号线文冲A出口100m）</p>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  花笙青少英语 · 让每个孩子掌握英文<br>
+  © 2026 花笙教育 All Rights Reserved
+</footer>
+
+<script>
+/* Scroll reveal */
+var faders = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .stagger');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.15 });
+faders.forEach(function(f) { observer.observe(f); });
+</script>
+
+</body>
+</html>
